@@ -30,13 +30,31 @@ const getDadJoke = async () => {
       Accept: `application/json`,
     },
   });
-   const jsonjokedad = await response.json();
-   console.log(jsonjokedad)
-   console.log(jsonjokedad)
-   
+  const jsonjokedad = await response.json();
+  console.log(jsonjokedad);
+  console.log(jsonjokedad);
 };
 
-getDadJoke()
+getDadJoke();
 
 // posting data to Api
+
+jokeObject = {
+  id: "rgbthgy",
+  joke: "you are dark as fuck.",
+  status: 200,
+};
+
+const PostData = async (data) => {
+  const response = await fetch(`https://httpbin.org/post`, {
+    method: `POST`,
+    headers: {
+      "Content-type": `application/json`,
+    },
+    body: JSON.stringify(data),
+  });
+  const jokedata = await response.json();
+  console.log(jokedata);
+};
+
 
